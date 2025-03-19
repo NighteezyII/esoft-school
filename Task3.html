@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка скобок</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Проверка скобок</h1>
+
+        <label for="bracketInput">Введите текст:</label>
+        <input type="text" id="bracketInput" placeholder="Введите текст">
+
+        <input type="button" value="Проверить" onclick="checkBrackets()">
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+
+        function checkBrackets() {
+            const input = document.getElementById('bracketInput').value;
+            const result = document.getElementById('result');
+            
+            let stack = [];
+
+            const bracketPairs = {
+                ")": "(",
+                "}": "{",
+                "]": "["
+            };
+            
+            for (let i = 0; i < input.length; i++) {
+                const bracket = input[i];
+                
+                if (bracket === "(" || bracket === "{" || bracket === "[") {
+                    stack.push(bracket);
+                    
+                } else if (bracket === ")" || bracket === "}" || bracket === "]") {
+                    
+                    if (stack.length > 0) {
+                        
+                        const lastBracket = stack[stack.length - 1];
+                        
+                        if (lastBracket === bracketPairs[bracket]) {
+                            stack.pop();
+                        } else {
+                            result.innerHTML = "Неверно";
+
+                            return;
+                        }
+                        
+                    } else {
+                        result.innerHTML = "Неверно";
+
+                        return;
+                    }
+                    
+                } else {
+                    continue;
+                }
+            }
+            
+            if (stack.length === 0) {
+                result.innerHTML = "Верно";
+
+            } else {
+                result.innerHTML = "Неверно";
+
+            }
+        }
+    </script>
+</body>
+</html>
