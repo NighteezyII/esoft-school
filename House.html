@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дом</title>
+    <style>
+        .box_house {
+            width: 250px;
+            height: 220px;
+            background-color: #f4a460;
+            border-bottom: 10px solid #3a0e0e;
+            border-bottom: 10px solid #3a0e0e; 
+            margin: 150px auto;
+            position: relative;
+
+            
+        }
+
+        .chimney {
+            width: 35px;
+            height: 70px;
+            background-color: #731212;
+            border: 3px solid #522222;
+            position: absolute;
+            bottom: 220px;
+            right: 35px;
+            
+        }
+
+        .roof {
+            width: 0;
+            height: 0;
+            border-left: 125px solid transparent;
+            border-right: 125px solid transparent;
+            border-bottom: 90px solid #734a12; 
+            position: absolute;
+            bottom: 220px;
+            
+        }
+
+        .window {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background-color: #a4dcfc;
+            border: 5px solid #997352;
+            position: absolute;
+            bottom: 53px;
+            left: 30px;
+
+        }
+
+        .door {
+            width: 70px;
+            height: 130px;
+            background-color: #50382d; 
+            border-left: 7px solid #8b572a;
+            border-top: 10px solid #8b572a;
+            border-right: 7px solid #8b572a;
+            position: absolute;
+            bottom: 0;
+            right: 30px;
+        }
+
+
+        .doorknob {
+            width: 12px;
+            height: 12px;
+            background-color: #a87c4b;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 50px;
+            right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box_house">
+        <div class="chimney"></div>
+        <div class="roof"></div>
+        <div class="window"></div>
+        <div class="door">
+            <div class="doorknob"></div>
+        </div>
+    </div>
+</body>
+</html>
